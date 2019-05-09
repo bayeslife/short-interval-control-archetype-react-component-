@@ -12,7 +12,7 @@ before_script:
  - npm install
 
 stages:
- - build
+# - build
  - publish
 
 build:lint:
