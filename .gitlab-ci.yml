@@ -15,21 +15,21 @@ stages:
 # - build
  - publish
 
-build:lint:
-  stage: build
-  script:
-    - npm run lint
+#build:lint:
+#  stage: build
+#  script:
+#    - npm run lint
 
 
-build:test:
-  stage: build
-  script:
-    - npm test
+#build:test:
+#  stage: build
+#  script:
+#    - npm test
 
 publish:
   stage: publish
   script:
-    - npm run build
+#    - npm run build
     - echo $NPM_TOKEN
     - echo '//registry.npmjs.org/:_authToken='$NPM_TOKEN > ~/.npmrc
     - npm publish
