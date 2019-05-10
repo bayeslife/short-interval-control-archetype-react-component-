@@ -1,15 +1,15 @@
 {
   "name": "short-interval-control-archetype-react-component",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "",
   "main": "index.js",
   "scripts": {
     "archetype:babel": "babel help",
-    "archetype:demo": "nwb --config node_modules/short-interval-control-archetype-react-component/nwb.config.js serve-react-demo",
+    "archetype:demo": "webpack-dev-server --mode development",
     "archetype:lint": "eslint -c node_modules/short-interval-control-archetype-react-component/eslintrc.json --ext .jsx --ext .js --fix src test",
     "archetype:transpile": "babel src -d dist --copy-files",
     "archetype:prepublishOnly": "builder run archetype:testlint && builder run archetype:transpile",
-    "archetype:pack": "webpack --mode production",
+    "archetype:pack": "webpack --config ./node_modules/short-interval-control-archetype-react-component/webpack.config.js --mode production",
     "archetype:github": "gh-pages -d examples/dist",
     "archetype:build": "builder run archetype:lint && builder run archetype:transpile && builder run archetype:pack",
     "archetype:deploy": "builder run archetype:build && builder run archetype:github",
