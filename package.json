@@ -1,71 +1,20 @@
 {
   "name": "short-interval-control-archetype-react-component",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "archetype:demo": "nwb serve-react-demo",
-    "archetype:lint": "eslint --ext .jsx --ext .js --fix src test",
+    "archetype:babel": "babel help",
+    "archetype:demo": "nwb --config node_modules/short-interval-control-archetype-react-component/nwb.config.js serve-react-demo",
+    "archetype:lint": "eslint -c node_modules/short-interval-control-archetype-react-component/eslintrc.json --ext .jsx --ext .js --fix src test",
     "archetype:transpile": "babel src -d dist --copy-files",
     "archetype:prepublishOnly": "npm run archetype:testlint && npm run archetype:transpile",
     "archetype:pack": "webpack --mode production",
     "archetype:github": "gh-pages -d examples/dist",
     "archetype:build": "npm run archetype:lint && npm run archetype:transpile && npm run archetype:pack",
     "archetype:deploy": "npm run archetype:build && npm run archetype:github",
-    "archetype:test": "./node_modules/riteway/bin/riteway -r @babel/register -r @babel/polyfill test/**/*.test.js",
+    "archetype:test": "./node_modules/riteway/bin/riteway  -r @babel/register -r @babel/polyfill test/**/*.test.js",
     "archetype:watch": "nodemon --exec 'npm run archetype:test'"
-  },
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": [
-            "last 2 versions",
-            "safari >= 7"
-          ]
-        }
-      ],
-      "@babel/preset-react"
-    ]
-  },
-  "eslintConfig": {
-    "env": {
-      "browser": true,
-      "commonjs": true,
-      "es6": true
-    },
-    "extends": [
-      "standard",
-      "eslint:recommended",
-      "plugin:react/recommended"
-    ],
-    "parserOptions": {
-      "sourceType": "module",
-      "ecmaVersion": "2017",
-      "ecmaFeatures": {
-        "jsx": true
-      }
-    },
-    "settings": {
-      "react": {
-        "version": "detect"
-      }
-    },
-    "rules": {
-      "indent": 0,
-      "no-unused-vars" :0,
-      "react/prop-types": 0,
-      "react/jsx-key": 0,
-      "linebreak-style": [
-        "error",
-        "unix"
-      ],
-      "quotes": [
-        "error",
-        "single"
-      ]
-    }
   },
   "peerDependencies": {
     "react": "^16.8.6",
