@@ -1,6 +1,6 @@
 {
   "name": "short-interval-control-archetype-react-component",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,11 +8,11 @@
     "archetype:demo": "nwb --config node_modules/short-interval-control-archetype-react-component/nwb.config.js serve-react-demo",
     "archetype:lint": "eslint -c node_modules/short-interval-control-archetype-react-component/eslintrc.json --ext .jsx --ext .js --fix src test",
     "archetype:transpile": "babel src -d dist --copy-files",
-    "archetype:prepublishOnly": "npm run archetype:testlint && npm run archetype:transpile",
+    "archetype:prepublishOnly": "builder run archetype:testlint && builder run archetype:transpile",
     "archetype:pack": "webpack --mode production",
     "archetype:github": "gh-pages -d examples/dist",
-    "archetype:build": "npm run archetype:lint && npm run archetype:transpile && npm run archetype:pack",
-    "archetype:deploy": "npm run archetype:build && npm run archetype:github",
+    "archetype:build": "builder run archetype:lint && builder run archetype:transpile && builder run archetype:pack",
+    "archetype:deploy": "builder run archetype:build && builder run archetype:github",
     "archetype:test": "./node_modules/riteway/bin/riteway  -r @babel/register -r @babel/polyfill test/**/*.test.js",
     "archetype:watch": "nodemon --exec 'npm run archetype:test'"
   },
