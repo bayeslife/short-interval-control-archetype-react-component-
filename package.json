@@ -1,11 +1,11 @@
 {
   "name": "short-interval-control-archetype-react-component",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "",
   "main": "index.js",
   "scripts": {
     "archetype:babel": "babel help",
-    "archetype:demo": "webpack-dev-server --mode development",
+    "archetype:demo": "webpack-dev-server --config ./node_modules/short-interval-control-archetype-react-component/webpack.config.js --mode development",
     "archetype:lint": "eslint -c node_modules/short-interval-control-archetype-react-component/eslintrc.json --ext .jsx --ext .js --fix src test",
     "archetype:transpile": "babel src -d dist --copy-files",
     "archetype:prepublishOnly": "builder run archetype:testlint && builder run archetype:transpile",
