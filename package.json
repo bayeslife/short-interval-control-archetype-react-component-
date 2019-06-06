@@ -1,6 +1,6 @@
 {
   "name": "short-interval-control-archetype-react-component",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "archetype:transpile": "babel src -d dist --copy-files",
     "archetype:prepublishOnly": "builder run archetype:lint && builder run archetype:transpile",
     "archetype:pack": "webpack --config ./node_modules/short-interval-control-archetype-react-component/webpack.config.js --mode production",
-    "archetype:github": "gh-pages -d examples/dist",
+    "archetype:github": "gh-pages -d demo/dist",
     "archetype:build": "builder run archetype:lint && builder run archetype:transpile && builder run archetype:pack",
     "archetype:deploy": "builder run archetype:build && builder run archetype:github",
     "archetype:test": "./node_modules/riteway/bin/riteway  -r @babel/register -r @babel/polyfill test/**/*.test.js",
