@@ -9,10 +9,12 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
 });
 const htmlWebpackInlineSourcePlugin = new HtmlWebpackInlineSourcePlugin()
 
+const DEMO_SOURCE_DIR=process.env.DEMO_SOURCE_DIR || 'demo'
+console.log(`Demo Source Dir: ${`}`)
 module.exports = {
-    entry: path.join(__dirname, "../../demo/src/index.js"),
+    entry: path.join(__dirname, `../../${DEMO_SOURCE_DIR}/src/index.js`),
     output: {
-        path: path.join(__dirname, "../../demo/dist"),
+        path: path.join(__dirname, `../../${DEMO_SOURCE_DIR}/dist`),
         filename: "bundle.js"
     },
     module: {
