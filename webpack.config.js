@@ -10,7 +10,7 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
 const htmlWebpackInlineSourcePlugin = new HtmlWebpackInlineSourcePlugin()
 
 const DEMO_SOURCE_DIR=process.env.DEMO_SOURCE_DIR || 'demo'
-console.log(`Demo Source Dir: ${`}`)
+console.log(`Demo Source Dir: ${DEMO_SOURCE_DIR}`)
 module.exports = {
     entry: path.join(__dirname, `../../${DEMO_SOURCE_DIR}/src/index.js`),
     output: {
