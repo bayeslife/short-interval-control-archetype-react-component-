@@ -1,12 +1,12 @@
 {
   "name": "short-interval-control-archetype-react-component",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "archetype:babel": "babel help",
     "archetype:demo": "webpack-dev-server --config ./node_modules/short-interval-control-archetype-react-component/webpack.config.js --mode development",
-    "archetype:demo-client-server": "webpack-dev-server --config ./node_modules/short-interval-control-archetype-react-component/webpack.client-server.config.js --mode development",
+    "archetype:demo-client-server": "node  -r @babel/register -r @babel/polyfill ${DEMO_SOURCE_DIR}/server/index.js",
     "archetype:lint": "eslint -c node_modules/short-interval-control-archetype-react-component/eslintrc.json --ext .jsx --ext .js --fix src test",
     "archetype:transpile": "babel src -d dist --copy-files",
     "archetype:prepublishOnly": "builder run archetype:lint && builder run archetype:transpile",
