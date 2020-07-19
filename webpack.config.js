@@ -18,10 +18,10 @@ module.exports = {
         path: path.join(__dirname, `../../${DEMO_SOURCE_DIR}/dist`),
         filename: "bundle.js"
     },
-    externals: {
-        react: 'commonjs react',
-       'react-dom': 'commonjs react-dom',
-     },
+    // externals: {
+    //     react: 'commonjs react',
+    //    'react-dom': 'commonjs react-dom',
+    //  },
     module: {
         rules: [
             {
