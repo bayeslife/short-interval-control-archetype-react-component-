@@ -19,6 +19,10 @@ module.exports = {
         filename: "bundle.js",
         publicPath: '/'
     },
+    externals: {
+        react: 'commonjs react',
+       'react-dom': 'commonjs react-dom',
+     },
     module: {
         rules: [
             {
